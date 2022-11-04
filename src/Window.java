@@ -16,6 +16,7 @@ public class Window extends JFrame implements Runnable {
         isRunning = true;
     }
 
+    /* Janela */
     public void update(double dt){
         Image dbImage = createImage(getWidth(), getHeight());
         Graphics dbg = dbImage.getGraphics();
@@ -32,7 +33,7 @@ public class Window extends JFrame implements Runnable {
 
     }
 
-
+/*Game Loop*/
     @Override
     public void run() {
          double lastFrameTime = 0.0;
