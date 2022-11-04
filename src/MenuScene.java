@@ -1,10 +1,21 @@
-import java.awt.*;
+import java.awt.Graphics;
+import java.awt.Color;
+import java.awt.event.KeyEvent;
 
 /*Dentro dessa classe pode se fazer qualquer update ou "draw" que queira que apareça na "MenuScene"*/
 public class MenuScene extends Scene {
+    int i = 0;
+
+    public KL keyListener;
+    public MenuScene(KL keyListener){
+this.keyListener = keyListener;
+    }
 
     @Override
-    public void update(Double dt) {
+    public void update(double dt) {
+if (keyListener.isKeyPressed(KeyEvent.VK_UP)) {
+    System.out.println("UP ARROW IS PRESSED ;D");
+}
 
     }
 

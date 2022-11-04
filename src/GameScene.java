@@ -3,7 +3,7 @@ import java.awt.*;
 public class GameScene extends Scene{
 
     @Override
-    public void update(Double dt) {
+    public void update(double dt) {
 
     }
 
