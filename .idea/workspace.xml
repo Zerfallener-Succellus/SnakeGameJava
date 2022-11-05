@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5800e8fd-eb2a-47ac-b221-bda22f42e84e" name="Changes" comment="Scene do Menu Principal">
-      <change afterPath="$PROJECT_DIR$/src/KL.java" afterDir="false" />
+    <list default="true" id="5800e8fd-eb2a-47ac-b221-bda22f42e84e" name="Changes" comment="Window scene e inicio do controle">
+      <change afterPath="$PROJECT_DIR$/src/ML.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Rect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/KL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/KL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MenuScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuScene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Window.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -100,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667598992027</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Window scene e inicio do controle">
+      <created>1667603225654</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1667603225654</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -119,6 +126,7 @@
     <MESSAGE value="First Part (Window)" />
     <MESSAGE value="Game Loop" />
     <MESSAGE value="Scene do Menu Principal" />
-    <option name="LAST_COMMIT_MESSAGE" value="Scene do Menu Principal" />
+    <MESSAGE value="Window scene e inicio do controle" />
+    <option name="LAST_COMMIT_MESSAGE" value="Window scene e inicio do controle" />
   </component>
 </project>
