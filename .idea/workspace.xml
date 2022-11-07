@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5800e8fd-eb2a-47ac-b221-bda22f42e84e" name="Changes" comment="Close">
+    <list default="true" id="5800e8fd-eb2a-47ac-b221-bda22f42e84e" name="Changes" comment="Preparando o inicio da &quot;Game Scene&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameScene.java" afterDir="false" />
     </list>
@@ -138,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667860376321</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Preparando o inicio da &quot;Game Scene&quot;">
+      <created>1667861590282</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1667861590282</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -162,6 +169,7 @@
     <MESSAGE value="Singletons" />
     <MESSAGE value="Modificadores Estáticos &quot;mudei as variavies de static para normais&quot;" />
     <MESSAGE value="Close" />
-    <option name="LAST_COMMIT_MESSAGE" value="Close" />
+    <MESSAGE value="Preparando o inicio da &quot;Game Scene&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Preparando o inicio da &quot;Game Scene&quot;" />
   </component>
 </project>

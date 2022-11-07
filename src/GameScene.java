@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.awt.geom.Rectangle2D;
 
 public class GameScene extends Scene{
     Rect background, foreground;
@@ -16,8 +17,12 @@ public class GameScene extends Scene{
 
     @Override
     public void draw(Graphics g) {
-        g.setColor(Color.BLUE);
-        g.fillRect(0,0,Constants.SCREEN_WIDTH,Constants.SCREEN_HEIGHT);
+        Graphics2D g2 = (Graphics2D)g;
+        g2.setColor(Color.BLACK);
+        g2.fill(new Rectangle2D.Double(background.x,background.y,background.width,background.height));
+
+        g2.setColor(Color.WHITE);
+        g2.fill(new Rectangle2D.Double(foreground.x,foreground.y,foreground.width,foreground.height));
 
     }
 }
