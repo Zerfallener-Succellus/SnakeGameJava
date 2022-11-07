@@ -53,7 +53,7 @@ public BufferedImage playCurrentImage, exitCurrentImage;
         if(keyListener.isKeyPressed(KeyEvent.VK_ENTER)){
             Window.getWindow().changeState( 1);
         }else if(keyListener.isKeyPressed(KeyEvent.VK_ESCAPE)){
-
+            Window.getWindow().close();
         }
 
         /*Código para o progama indentificar que se está passando o mouse sobre o enter e mudar a sprite*/
@@ -73,6 +73,10 @@ public BufferedImage playCurrentImage, exitCurrentImage;
         if (mouseListener.getX() >= exitRect.x && mouseListener.getX() <= exitRect.x + exitRect.width &&
                 mouseListener.getY() >= exitRect.y && mouseListener.getY() <= exitRect.y + exitRect.height){
             exitCurrentImage =exitPressed;
+            if (mouseListener.isPressed()) {
+                Window.getWindow().close();
+            }
+
         }else{
             exitCurrentImage = exit;
         }

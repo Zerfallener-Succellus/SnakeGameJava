@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5800e8fd-eb2a-47ac-b221-bda22f42e84e" name="Changes" comment="Singletons">
+    <list default="true" id="5800e8fd-eb2a-47ac-b221-bda22f42e84e" name="Changes" comment="Modificadores Estáticos &quot;mudei as variavies de static para normais&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MenuScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuScene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Window.java" afterDir="false" />
@@ -125,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667856341333</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Modificadores Estáticos &quot;mudei as variavies de static para normais&quot;">
+      <created>1667858426657</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1667858426657</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -147,6 +154,7 @@
     <MESSAGE value="Window scene e inicio do controle" />
     <MESSAGE value="Menu Principal 1a versão" />
     <MESSAGE value="Singletons" />
-    <option name="LAST_COMMIT_MESSAGE" value="Singletons" />
+    <MESSAGE value="Modificadores Estáticos &quot;mudei as variavies de static para normais&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modificadores Estáticos &quot;mudei as variavies de static para normais&quot;" />
   </component>
 </project>

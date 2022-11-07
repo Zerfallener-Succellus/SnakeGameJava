@@ -39,7 +39,7 @@ public class Window extends JFrame implements Runnable {
 
 
     public void close(){
-
+     isRunning = false;
     }
 
 
@@ -96,5 +96,7 @@ public class Window extends JFrame implements Runnable {
          }catch(Exception e){
              e.printStackTrace();
          }
+
+         this.dispose();
     }
 }
