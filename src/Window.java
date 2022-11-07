@@ -5,6 +5,7 @@ import java.awt.image.*;
 
 public class Window extends JFrame implements Runnable {
 
+    public static Window window = null;
     public boolean isRunning = true;
 
     public static int currentState;
@@ -27,6 +28,13 @@ public class Window extends JFrame implements Runnable {
         Window.changeState(0);
     }
 
+
+    public static Window getWindow(){
+        if (Window.window == null){
+            Window.window = new Window(Constants.SCREEN_WIDTH,Constants.SCREEN_HEIGHT,Constants.SCREEN_TITLE);
+        }
+        return Window.window;
+    }
 
     public static void close(){
 
