@@ -8,11 +8,11 @@ public class Window extends JFrame implements Runnable {
     public static Window window = null;
     public boolean isRunning = true;
 
-    public static int currentState;
-    public static Scene currentScene;
+    public int currentState;
+    public Scene currentScene;
 
-    public static KL keyListener = new KL();
-    public static ML mouseListener = new ML();
+    public KL keyListener = new KL();
+    public ML mouseListener = new ML();
 
     public Window(int width, int heigth, String title){
         setSize(width, heigth);
@@ -20,41 +20,43 @@ public class Window extends JFrame implements Runnable {
         setResizable(false);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        addKeyListener(Window.keyListener);
+        addKeyListener(keyListener); /*qqr coisa referencia o windown aqui window.*/
         addMouseListener(mouseListener);
         addMouseMotionListener(mouseListener);
 
         isRunning = true;
-        Window.changeState(0);
+        changeState(0);
     }
 
 
-    public static Window getWindow(){
-        if (Window.window == null){
-            Window.window = new Window(Constants.SCREEN_WIDTH,Constants.SCREEN_HEIGHT,Constants.SCREEN_TITLE);
+    public static Window getWindow() {
+        if (Window.window == null) {
+            Window.window = new Window(Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT, Constants.SCREEN_TITLE);
         }
+
         return Window.window;
     }
 
-    public static void close(){
+
+    public void close(){
 
     }
 
 
     /*Mudar de "Scene"*/
-    public static void changeState(int newState){
-        Window.currentState = newState;
+    public void changeState(int newState){
+        currentState = newState;
         /*Esse switch serve para mostrar qual cena "buildar" baseado em que state está*/
-        switch(Window.currentState){
+        switch(currentState){
             case 0:
-                Window.currentScene = new MenuScene(Window.keyListener, Window.mouseListener);
+                currentScene = new MenuScene(keyListener, mouseListener);
                 break;
             case 1:
-                Window.currentScene = new GameScene();
+                currentScene = new GameScene();
                 break;
             default:
                 System.out.println("Unknow Scene.");
-                Window.currentScene = null;
+                currentScene = null;
                 break;
         }
     }

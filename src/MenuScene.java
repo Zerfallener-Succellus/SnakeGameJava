@@ -51,7 +51,7 @@ public BufferedImage playCurrentImage, exitCurrentImage;
     public void update(double dt) {
 
         if(keyListener.isKeyPressed(KeyEvent.VK_ENTER)){
-            Window.changeState( 1);
+            Window.getWindow().changeState( 1);
         }else if(keyListener.isKeyPressed(KeyEvent.VK_ESCAPE)){
 
         }
@@ -61,7 +61,8 @@ public BufferedImage playCurrentImage, exitCurrentImage;
        mouseListener.getY() >= playRect.y && mouseListener.getY() <= playRect.y + playRect.height){
     playCurrentImage =playPressed;
             if (mouseListener.isPressed()){
-                Window.changeState( 1);}
+                Window.getWindow().changeState( 1);
+            }
        }else{
     playCurrentImage = play;
 
