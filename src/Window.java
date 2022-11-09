@@ -1,5 +1,7 @@
 import javax.swing.JFrame;
 import java.awt.*;
+import java.time.Duration;
+import java.time.Instant;
 import java.awt.event.MouseListener;
 import java.awt.image.*;
 
@@ -14,8 +16,8 @@ public class Window extends JFrame implements Runnable {
     public KL keyListener = new KL();
     public ML mouseListener = new ML();
 
-    public Window(int width, int heigth, String title){
-        setSize(width, heigth);
+    public Window(int width, int height, String title){
+        setSize(width, height);
         setTitle(title);
         setResizable(false);
         setVisible(true);
@@ -52,7 +54,7 @@ public class Window extends JFrame implements Runnable {
                 currentScene = new MenuScene(keyListener, mouseListener);
                 break;
             case 1:
-                currentScene = new GameScene();
+                currentScene = new GameScene(keyListener);
                 break;
             default:
                 System.out.println("Unknow Scene.");
@@ -82,21 +84,24 @@ public class Window extends JFrame implements Runnable {
 /*Game Loop*/
     @Override
     public void run() {
-         double lastFrameTime = 0.0;
-         try{
-             while (isRunning){
-                 double time = Time.getTime();
-                 double deltaTime = time - lastFrameTime;
-                 lastFrameTime = time;
+        Instant lastFrameTime = Instant.now();
+        try {
+            while (isRunning) {
+                Instant time = Instant.now();
+                double deltaTime = Duration.between(lastFrameTime, time).toNanos() * 10E-10;
+                lastFrameTime = Instant.now();
 
-                 update(deltaTime);
+                double deltaWanted = 0.0167;
+                update(deltaWanted);
+                long msToSleep = (long)((deltaWanted - deltaTime) * 1000);
+                if (msToSleep > 0) {
+                    Thread.sleep(msToSleep);
+                }
+            }
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
 
-             }
-
-         }catch(Exception e){
-             e.printStackTrace();
-         }
-
-         this.dispose();
+        this.dispose();
     }
 }

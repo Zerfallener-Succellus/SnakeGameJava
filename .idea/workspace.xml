@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5800e8fd-eb2a-47ac-b221-bda22f42e84e" name="Changes" comment="&quot;Desenhando a game scene&quot;">
-      <change afterPath="$PROJECT_DIR$/src/Snake.java" afterDir="false" />
+    <list default="true" id="5800e8fd-eb2a-47ac-b221-bda22f42e84e" name="Changes" comment="Snake Body (BETA)">
+      <change afterPath="$PROJECT_DIR$/src/Direction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameScene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MenuScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Snake.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Window.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +20,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -154,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667862130101</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Snake Body (BETA)">
+      <created>1667953599051</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1667953599051</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -180,6 +189,7 @@
     <MESSAGE value="Close" />
     <MESSAGE value="Preparando o inicio da &quot;Game Scene&quot;" />
     <MESSAGE value="&quot;Desenhando a game scene&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Desenhando a game scene&quot;" />
+    <MESSAGE value="Snake Body (BETA)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Snake Body (BETA)" />
   </component>
 </project>
