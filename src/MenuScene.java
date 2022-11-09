@@ -22,8 +22,8 @@ public BufferedImage playCurrentImage, exitCurrentImage;
         this.mouseListener = mouseListener;
 
         try{
-            BufferedImage spritsheet = ImageIO.read(new File("assets/menuSprite.png"));
-            title = spritsheet.getSubimage(0,0, 800, 509);
+            BufferedImage spritesheet = ImageIO.read(new File("assets/menuSprite.png"));
+            title = spritesheet.getSubimage(0,0, 800, 509);
         } catch (Exception e) {
             e.printStackTrace();
         }
