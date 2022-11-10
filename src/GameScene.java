@@ -15,7 +15,7 @@ public class GameScene extends Scene{
         this.keyListener = keyListener;
     }
 
-    @Override
+  @Override
     public void update(double dt) {
         if (keyListener.isKeyPressed(KeyEvent.VK_UP)) {
             snake.changeDirecton(Direction.UP);
@@ -29,6 +29,9 @@ public class GameScene extends Scene{
 
         snake.update(dt);
     }
+
+
+
 
     @Override
     public void draw(Graphics g) {

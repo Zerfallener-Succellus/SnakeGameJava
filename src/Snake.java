@@ -11,7 +11,7 @@ public class Snake {
 
     public Direction direction = Direction.RIGHT;
 
-    public double ogWaitBetweenUpdates = 0.1f;
+    public double ogWaitBetweenUpdates = 0.3f;
     public double waitTimeLeft = ogWaitBetweenUpdates;
 
     public Snake (int size,double startX,double startY, double bodyWidth, double bodyHeight){
@@ -42,6 +42,10 @@ public class Snake {
     }
 
     public void update(double dt) {
+
+        if(intersectingWithSelf()){
+            Window.getWindow().changeState(0);
+        }
         if (waitTimeLeft > 0) {
             waitTimeLeft -= dt;
             return;
@@ -72,92 +76,58 @@ public class Snake {
 
         body[head].x = newX;
         body[head].y = newY;
+
+
     }
 
-    public void draw(Graphics2D g2) {
-        for (int i = tail; i != head; i= (i + 1) % body.length){
+    public boolean intersectingWithSelf() {
+        Rect headR = body[head];
+        for (int i = tail; i != head; i = (i + 1) % body.length) {
+            if (intersecting(headR, body[i])) return true;
+        }
+        return false;
+    }
 
-            if (i != head){
+
+    public boolean intersecting(Rect r1, Rect r2) {
+        return (r1.x >= r2.x && r1.x + r1.width <= r2.x + r2.width &&
+                r1.y >= r2.y && r1.y + r1.height <= r2.y + r2.height);
+    }
+
+
+    public void draw(Graphics2D g2) {
+        for (int i = tail; i != head; i = (i + 1) % body.length) {
+
+            if (i != tail) {
 
                 Rect piece = body[head];
                 double subWidth = (piece.width - 6.0) / 2.0;
                 double subHeight = (piece.height - 6.0) / 2.0;
-                g2.setColor(Color.BLACK);
 
-                g2.fill(new Rectangle2D.Double(piece.x + 3.0 + subWidth, piece.y + 7.0 - subHeight,subWidth - 4.0,subHeight- 4.0));
-
-
-                g2.fill(new Rectangle2D.Double(piece.x + 6.0, piece.y + 4.0,subWidth - 4.0,subHeight- 4.0));
-                g2.fill(new Rectangle2D.Double(piece.x + subWidth * 2, piece.y + 4.0,subWidth- 4.0,subHeight- 4.0));
-                g2.fill(new Rectangle2D.Double(piece.x + (subWidth * 3) - 3, piece.y + 4.0,subWidth- 4.0,subHeight- 4.0));
-
-
-                g2.fill(new Rectangle2D.Double(piece.x + 3.0 + subWidth, piece.y + 2.0 + subHeight,subWidth- 4.0,subHeight- 4.0));
-                g2.fill(new Rectangle2D.Double(piece.x + 0.0, piece.y + 2.0 + subHeight,subWidth - 4.0,subHeight- 4.0));
-                g2.fill(new Rectangle2D.Double(piece.x + 6.0, piece.y + 2.0+ subHeight,subWidth - 4.0,subHeight- 4.0));
-                g2.fill(new Rectangle2D.Double(piece.x + subWidth * 2, piece.y +  2.0+ subHeight,subWidth- 4.0,subHeight- 4.0));
-                g2.fill(new Rectangle2D.Double(piece.x + (subWidth * 3) - 3, piece.y +  2.0+ subHeight,subWidth- 4.0,subHeight- 4.0));
+                g2.setColor(Color.RED);
+                g2.fill(new Rectangle2D.Double(piece.x + 2.0, piece.y + 2.0, subWidth, subHeight));
+                g2.fill(new Rectangle2D.Double(piece.x + 4.0 + subWidth, piece.y + 2.0, subWidth, subHeight));
+                g2.fill(new Rectangle2D.Double(piece.x + 2.0, piece.y + 4.0 + subHeight, subWidth, subHeight));
+                g2.fill(new Rectangle2D.Double(piece.x + 4.0 + subWidth, piece.y + 4.0 + subHeight, subWidth, subHeight));
 
 
             }
 
-            if (i != head){
-
-                Rect piece = body[tail];
-                double subWidth = (piece.width - 6.0) / 2.0;
-                double subHeight = (piece.height - 6.0) / 2.0;
-                g2.setColor(Color.BLACK);
 
 
+                    Rect piece = body[i];
+                    double subWidth = (piece.width - 6.0) / 2.0;
+                    double subHeight = (piece.height - 6.0) / 2.0;
 
-                g2.fill(new Rectangle2D.Double(piece.x + subWidth * 2, piece.y + 4.0,subWidth- 4.0,subHeight- 4.0));
-                g2.fill(new Rectangle2D.Double(piece.x + (subWidth * 3) - 3, piece.y + 4.0,subWidth- 4.0,subHeight- 4.0));
-
-
-                g2.fill(new Rectangle2D.Double(piece.x + 3.0 + subWidth, piece.y + 2.0 + subHeight,subWidth- 4.0,subHeight- 4.0));
-                g2.fill(new Rectangle2D.Double(piece.x + 0.0, piece.y + 2.0 + subHeight,subWidth - 4.0,subHeight- 4.0));
-                g2.fill(new Rectangle2D.Double(piece.x + 6.0, piece.y + 2.0+ subHeight,subWidth - 4.0,subHeight- 4.0));
-                g2.fill(new Rectangle2D.Double(piece.x + subWidth * 2, piece.y +  2.0+ subHeight,subWidth- 4.0,subHeight- 4.0));
-                g2.fill(new Rectangle2D.Double(piece.x + (subWidth * 3) - 3, piece.y +  2.0+ subHeight,subWidth- 4.0,subHeight- 4.0));
-
-
-                g2.setColor(Color.WHITE);
-                g2.fill(new Rectangle2D.Double(piece.x + 6.0, piece.y + 4.0,subWidth - 4.0,subHeight- 4.0));
-
-
-            }
-
-            Rect piece = body[i];
-            double subWidth = (piece.width - 6.0) / 2.0;
-            double subHeight = (piece.height - 6.0) / 2.0;
-
-            g2.setColor(Color.BLACK);
-
-
-
-            g2.fill(new Rectangle2D.Double(piece.x + 6.0, piece.y + 4.0,subWidth - 4.0,subHeight- 4.0));
-            g2.fill(new Rectangle2D.Double(piece.x + 3.0 + subWidth, piece.y + 4.0,subWidth- 4.0,subHeight- 4.0));
-            g2.fill(new Rectangle2D.Double(piece.x + 9.0 + subWidth, piece.y + 4.0,subWidth- 4.0,subHeight- 4.0));
-
-            g2.fill(new Rectangle2D.Double(piece.x + 0.0, piece.y + 2.0 + subHeight,subWidth - 4.0,subHeight- 4.0));
-            g2.fill(new Rectangle2D.Double(piece.x + 6.0, piece.y + 2.0+ subHeight,subWidth - 4.0,subHeight- 4.0));
-            g2.fill(new Rectangle2D.Double(piece.x + 3.0 + subWidth, piece.y + 2.0+ subHeight,subWidth- 4.0,subHeight- 4.0));
-
-
-            g2.setColor(Color.WHITE);
-
-            g2.fill(new Rectangle2D.Double(piece.x + 0.0, piece.y + 4.0,subWidth - 4.0,subHeight- 4.0));
-
-            g2.fill(new Rectangle2D.Double(piece.x + 9.0 + subWidth, piece.y + 2.0+ subHeight,subWidth- 4.0,subHeight- 4.0));
-
-
-            /*g2.fill(new Rectangle2D.Double(piece.x + 12.0 + subWidth, piece.y + 4.0 ,subWidth - 2.0,subHeight - 2.0));*/
-        }
+                    g2.setColor(Color.BLACK);
+                    g2.fill(new Rectangle2D.Double(piece.x + 2.0, piece.y + 2.0, subWidth, subHeight));
+                    g2.fill(new Rectangle2D.Double(piece.x + 4.0 + subWidth, piece.y + 2.0, subWidth, subHeight));
+                    g2.fill(new Rectangle2D.Double(piece.x + 2.0, piece.y + 4.0 + subHeight, subWidth, subHeight));
+                    g2.fill(new Rectangle2D.Double(piece.x + 4.0 + subWidth, piece.y + 4.0 + subHeight, subWidth, subHeight));
 
 
 
 
-    }
 
 
-}
+    }}}
