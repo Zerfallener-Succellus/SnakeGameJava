@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5800e8fd-eb2a-47ac-b221-bda22f42e84e" name="Changes" comment="Colisão com o própio corpo">
-      <change afterPath="$PROJECT_DIR$/src/Food.java" afterDir="false" />
+    <list default="true" id="5800e8fd-eb2a-47ac-b221-bda22f42e84e" name="Changes" comment="Crescimento e &quot;Melhoras Visuais&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameScene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Snake.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668121457523</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Crescimento e &quot;Melhoras Visuais&quot;">
+      <created>1668213738741</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1668213738741</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -209,6 +212,7 @@
     <MESSAGE value="Snake Body (BETA)" />
     <MESSAGE value="Movimentação Inicial" />
     <MESSAGE value="Colisão com o própio corpo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Colisão com o própio corpo" />
+    <MESSAGE value="Crescimento e &quot;Melhoras Visuais&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Crescimento e &quot;Melhoras Visuais&quot;" />
   </component>
 </project>

@@ -10,6 +10,8 @@ public class Snake {
     public int head = 0;
 
     public Direction direction = Direction.RIGHT;
+    public Direction lastDirection;
+    
 
 
     public double ogWaitBetweenUpdates = 0.1f;
@@ -17,6 +19,8 @@ public class Snake {
 
     public Rect background;
     public Snake (int size,double startX,double startY, double bodyWidth, double bodyHeight, Rect background){
+
+        
         this.size = size;
         this.bodyWidth = bodyWidth;
         this.bodyHeight = bodyHeight;
@@ -25,7 +29,7 @@ public class Snake {
 
 
         for (int i=0; i < size; i++) {
-            Rect bodyPiece = new Rect( startX + i * bodyWidth, startY, bodyWidth, bodyHeight);
+            Rect bodyPiece = new Rect( startX + i * bodyWidth, startY, bodyWidth, bodyHeight,Direction.RIGHT,Direction.LAST);
             body[i] = bodyPiece;
             head++;
         }
@@ -33,17 +37,48 @@ public class Snake {
 
     }
 
-    public void changeDirecton(Direction newDirection){
-        if (newDirection == Direction.RIGHT && direction != Direction.LEFT)
-            direction = newDirection;
-        else if (newDirection == Direction.LEFT && direction != Direction.RIGHT)
-            direction = newDirection;
-        else if (newDirection == Direction.UP && direction != Direction.DOWN)
-            direction = newDirection;
-        else if (newDirection == Direction.DOWN && direction != Direction.UP)
-            direction = newDirection;
+    
+    
+ 
 
+    
 
+    public void changeDirecton(Direction newDirection,Direction lastDirection){
+        if (newDirection == Direction.RIGHT && direction != Direction.LEFT){
+            direction = newDirection;
+            }
+        else if (newDirection == Direction.LEFT && direction != Direction.RIGHT){
+            direction = newDirection;
+        }
+        else if (newDirection == Direction.UP && direction != Direction.DOWN){
+            
+            direction = newDirection;}
+        else if (newDirection == Direction.DOWN && direction != Direction.UP){
+            
+            direction = newDirection;}
+}
+
+    public void lastDirectionchange(Direction lastDirection, Direction newDirection){
+        if (direction == Direction.RIGHT && newDirection == Direction.UP || newDirection == Direction.DOWN){
+            lastDirection = Direction.RIGHT;
+        }
+        else if (direction == Direction.LEFT && newDirection == Direction.UP || newDirection == Direction.DOWN){
+            lastDirection = Direction.LEFT;
+        }
+        else if (direction == Direction.UP && newDirection == Direction.LEFT || newDirection == Direction.RIGHT){
+            lastDirection = Direction.UP;
+        }
+        else if (direction == Direction.DOWN && newDirection == Direction.LEFT || newDirection == Direction.RIGHT){
+            lastDirection = Direction.DOWN;
+        }
+
+    }
+
+    public void dontcrashplease(Direction lastDirection, Direction newDirection){
+        if(direction == Direction.LEFT && lastDirection ==Direction.DOWN ){
+            
+           
+        }
     }
 
     public void update(double dt) {
@@ -111,21 +146,21 @@ public class Snake {
         double newX = 0;
         double newY = 0;
 
-        if (direction == Direction.RIGHT) {
+        if (lastDirection == Direction.RIGHT) {
             newX = body[tail].x - bodyWidth;
             newY = body[tail].y;
-        } else if (direction == Direction.LEFT) {
+        } else if (lastDirection == Direction.LEFT) {
             newX = body[tail].x + bodyWidth;
             newY = body[tail].y;
-        } else if (direction == Direction.UP) {
+        } else if (lastDirection == Direction.UP) {
             newX = body[tail].x;
             newY = body[tail].y + bodyHeight;
-        } else if (direction == Direction.DOWN) {
+        } else if (lastDirection == Direction.DOWN) {
             newX = body[tail].x;
             newY = body[tail].y - bodyHeight;
         }
 
-        Rect newBodyPiece = new Rect(newX, newY, bodyWidth, bodyHeight);
+        Rect newBodyPiece = new Rect(newX, newY, bodyWidth, bodyHeight,direction,lastDirection);
 
         tail = (tail - 1) % body.length;
         body[tail] = newBodyPiece;
@@ -154,46 +189,35 @@ public class Snake {
 
 
                     Rect piece = body[i];
-                    double subWidth = (piece.width - 6.0) / 3.0;
-                    double subHeight = (piece.height - 6.0) / 3.0;
+                    double subWidth = (piece.width - 6.0) / 2.0;
+                    double subHeight = (piece.height - 6.0) / 2.0;
 
-                    if (direction == Direction.LEFT||direction == Direction.RIGHT) {
+                    
 
                         g2.setColor(Color.BLACK);
 
-                        g2.fill(new Rectangle2D.Double(piece.x + 4.0 + subWidth, piece.y + 2.0, subWidth, subHeight));
-                        g2.fill(new Rectangle2D.Double(piece.x + 6.0 + subWidth * 2, piece.y + 2.0, subWidth, subHeight));
-                        g2.fill(new Rectangle2D.Double(piece.x + 2.0, piece.y + 4.0 + subHeight, subWidth, subHeight));
-                        g2.fill(new Rectangle2D.Double(piece.x + 4.0 + subWidth, piece.y + 4.0 + subHeight, subWidth, subHeight));
-
-
-                        g2.setColor(new Color(178, 189, 8, 255));
                         g2.fill(new Rectangle2D.Double(piece.x + 2.0, piece.y + 2.0, subWidth, subHeight));
-                        g2.fill(new Rectangle2D.Double(piece.x + 6.0 + subWidth * 2, piece.y + 4.0 + subHeight, subWidth, subHeight));
+            g2.fill(new Rectangle2D.Double(piece.x + 4.0 + subWidth, piece.y + 2.0, subWidth, subHeight));
+            g2.fill(new Rectangle2D.Double(piece.x + 2.0, piece.y + 4.0 + subHeight, subWidth, subHeight));
+            g2.fill(new Rectangle2D.Double(piece.x + 4.0 + subWidth, piece.y + 4.0 + subHeight, subWidth, subHeight));
 
-                    }else if (direction == Direction.UP||direction == Direction.DOWN){
+            Rect piecee = body[head];
+                    double subWidthe = (piecee.width - 6.0) * 1.2;
+                    double subHeighte = (piecee.height - 6.0) *1.2;
                         g2.setColor(Color.BLACK);
 
+                        g2.fill(new Rectangle2D.Double(piecee.x + 2.0, piecee.y + 2.0, subWidthe , subHeighte));
 
+                        Rect pieceee = body[tail];
+                    double subWidthee = (pieceee.width - 6.0) * 1.2;
+                    double subHeightee = (pieceee.height - 6.0) *1.2;
+                        g2.setColor(Color.BLACK);
 
-                        g2.fill(new Rectangle2D.Double(piece.x + 4.0 + subWidth, piece.y + 2.0, subWidth, subHeight));
+                        g2.fill(new Rectangle2D.Double(pieceee.x + 2.0, pieceee.y + 2.0, subWidthee , subHeightee));
+            
+            
 
-
-                        g2.fill(new Rectangle2D.Double(piece.x + 4.0 + subWidth, piece.y + 4.0 + subHeight, subWidth, subHeight));
-                        g2.fill(new Rectangle2D.Double(piece.x + 6.0 + subWidth * 2, piece.y + 4.0 + subHeight, subWidth, subHeight));
-
-
-                        g2.fill(new Rectangle2D.Double(piece.x + 6.0 + subWidth * 2, piece.y + 6.0 + subHeight * 2, subWidth, subHeight));
-
-                        g2.setColor(new Color(178, 189, 8, 255));
-                        g2.fill(new Rectangle2D.Double(piece.x + 4.0 + subWidth, piece.y + 6.0 + subHeight * 2, subWidth, subHeight));
-                        g2.fill(new Rectangle2D.Double(piece.x + 6.0 + subWidth * 2, piece.y + 2.0, subWidth, subHeight));
-
-
-
-
-
-                    }
+                    
 
 
 

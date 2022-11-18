@@ -41,9 +41,9 @@ public BufferedImage playCurrentImage, exitCurrentImage;
         playCurrentImage = play;
         exitCurrentImage = exit;
 
-        titleRect = new Rect(35,20,700,476);
-        playRect = new Rect(240,515,92,88);
-        exitRect = new Rect(440,515,92,88);
+        titleRect = new Rect(35,20,700,476,Direction.RIGHT,Direction.LAST);
+        playRect = new Rect(240,515,92,88,Direction.RIGHT,Direction.LAST);
+        exitRect = new Rect(440,515,92,88,Direction.RIGHT,Direction.LAST);
         }
 
 

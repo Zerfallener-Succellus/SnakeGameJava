@@ -6,29 +6,31 @@ public class GameScene extends Scene{
     Rect background, foreground;
     Snake snake;
     KL keyListener;
+   
 
     public Food food;
 
     public GameScene(KL keyListener){
-        background = new Rect(0,0,Constants.SCREEN_WIDTH,Constants.SCREEN_HEIGHT);
-        foreground = new Rect(24,48,Constants.TILE_WIDTH * 31, Constants.TILE_WIDTH*22);
+        background = new Rect(0,0,Constants.SCREEN_WIDTH,Constants.SCREEN_HEIGHT,Direction.NONE,Direction.LAST);
+        foreground = new Rect(24,48,Constants.TILE_WIDTH * 31, Constants.TILE_WIDTH*22,Direction.NONE,Direction.LAST);
         /*Isso cira um grid de 31 colunas e 22 rows todos com largura e altura de 24 :D*/
         snake = new Snake(3,48,48 + 24,24,24,foreground);
         this.keyListener = keyListener;
         food = new Food(foreground, snake, 12,12,Color.BLACK);
         food.spawn();
+        
     }
 
   @Override
     public void update(double dt) {
         if (keyListener.isKeyPressed(KeyEvent.VK_UP)) {
-            snake.changeDirecton(Direction.UP);
+            snake.changeDirecton(Direction.UP,Direction.LAST);
         } else if (keyListener.isKeyPressed(KeyEvent.VK_DOWN)) {
-            snake.changeDirecton(Direction.DOWN);
+            snake.changeDirecton(Direction.DOWN,Direction.LAST);
         } else if (keyListener.isKeyPressed(KeyEvent.VK_RIGHT)) {
-            snake.changeDirecton(Direction.RIGHT);
+            snake.changeDirecton(Direction.RIGHT,Direction.LAST);
         } else if (keyListener.isKeyPressed(KeyEvent.VK_LEFT)) {
-            snake.changeDirecton(Direction.LEFT);
+            snake.changeDirecton(Direction.LEFT,Direction.LAST);
         }
 
       if (!food.isSpawned) food.spawn();
@@ -37,6 +39,8 @@ public class GameScene extends Scene{
         snake.update(dt);
 
     }
+
+    
 
 
 

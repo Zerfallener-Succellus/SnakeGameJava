@@ -17,7 +17,7 @@ public class Food {
         this.width = width;
         this.height = height;
         this.color = color;
-        this.rect = new Rect(0, 0, width, height);
+        this.rect = new Rect(0, 0, width, height,Direction.NONE,Direction.LAST);
 
         xPadding = (int)((Constants.TILE_WIDTH - this.width) / 2.0);
     }
@@ -42,6 +42,7 @@ public class Food {
     }
 
     public void draw(Graphics2D g2) {
+        
         g2.setColor(color);
         g2.fillRect((int)this.rect.x + xPadding, (int)this.rect.y + xPadding, width, height);
     }
