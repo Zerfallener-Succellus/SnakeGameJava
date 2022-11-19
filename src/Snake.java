@@ -75,8 +75,8 @@ public class Snake {
     }
 
     public void dontcrashplease(Direction lastDirection, Direction newDirection){
-        if(direction == Direction.LEFT && lastDirection ==Direction.DOWN ){
-            
+        if(direction == Direction.LEFT && lastDirection ==Direction.UP && newDirection ==Direction.DOWN){
+            newDirection = Direction.LEFT;
            
         }
     }

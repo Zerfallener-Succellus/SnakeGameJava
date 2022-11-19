@@ -1,11 +1,14 @@
 import java.awt.*;
 
+import javax.swing.JLabel;
+
 public class Food {
     public Rect background;
     public Snake snake;
     public int width, height;
     public Color color;
     public Rect rect;
+    public double points;
 
     public int xPadding;
 
@@ -38,8 +41,15 @@ public class Food {
             this.rect.x = -100;
             this.rect.y = -100;
             isSpawned = false;
+            points = points + 100;
+            
         }
     }
+
+    
+
+    
+
 
     public void draw(Graphics2D g2) {
         
