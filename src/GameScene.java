@@ -16,7 +16,32 @@ public class GameScene extends Scene{
     
    public int pointsfinal;
 
-    public Food food = new Food(background, snake, pointsfinal, pointsfinal, null);
+    public int getPointsfinal() {
+	return pointsfinal;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+public void setPointsfinal(int pointsfinal) {
+	this.pointsfinal = pointsfinal;
+}
+
+
+
+
+
+
+	public Food food = new Food(background, snake, pointsfinal, pointsfinal, null);
 
     
    
