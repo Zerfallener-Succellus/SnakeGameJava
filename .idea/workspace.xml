@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5800e8fd-eb2a-47ac-b221-bda22f42e84e" name="Changes" comment="Crescimento e &quot;Melhoras Visuais&quot;">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="2H3UBMOFJLY1FLJzHteoBGXtdN5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="SnakeGameDemo" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5800e8fd-eb2a-47ac-b221-bda22f42e84e" name="Changes" comment="" />
+      <created>1667513139301</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1667513139301</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Start">
+      <created>1667513287146</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1667513287146</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Start">
+      <created>1667514386273</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1667514386273</updated>
+    </task>
+    <task id="LOCAL-00003" summary="First Part (Window)">
+      <created>1667515132410</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1667515132410</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Game Loop">
+      <created>1667517530163</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1667517530163</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Scene do Menu Principal">
+      <created>1667598992027</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1667598992027</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Window scene e inicio do controle">
+      <created>1667603225654</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1667603225654</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Menu Principal 1a versão">
+      <created>1667692672506</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1667692672506</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Menu Principal 1a versão">
+      <created>1667692853441</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1667692853441</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Singletons">
+      <created>1667856341332</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1667856341333</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Modificadores Estáticos &quot;mudei as variavies de static para normais&quot;">
+      <created>1667858426657</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1667858426657</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Close">
+      <created>1667860376321</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1667860376321</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Preparando o inicio da &quot;Game Scene&quot;">
+      <created>1667861590282</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1667861590282</updated>
+    </task>
+    <task id="LOCAL-00013" summary="&quot;Desenhando a game scene&quot;">
+      <created>1667862130101</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1667862130101</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Snake Body (BETA)">
+      <created>1667953599051</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1667953599051</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Movimentação Inicial">
+      <created>1668036576540</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1668036576540</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Colisão com o própio corpo">
+      <created>1668121457523</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1668121457523</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Crescimento e &quot;Melhoras Visuais&quot;">
+      <created>1668213738741</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1668213738741</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Start" />
+    <MESSAGE value="First Part (Window)" />
+    <MESSAGE value="Game Loop" />
+    <MESSAGE value="Scene do Menu Principal" />
+    <MESSAGE value="Window scene e inicio do controle" />
+    <MESSAGE value="Menu Principal 1a versão" />
+    <MESSAGE value="Singletons" />
+    <MESSAGE value="Modificadores Estáticos &quot;mudei as variavies de static para normais&quot;" />
+    <MESSAGE value="Close" />
+    <MESSAGE value="Preparando o inicio da &quot;Game Scene&quot;" />
+    <MESSAGE value="&quot;Desenhando a game scene&quot;" />
+    <MESSAGE value="Snake Body (BETA)" />
+    <MESSAGE value="Movimentação Inicial" />
+    <MESSAGE value="Colisão com o própio corpo" />
+    <MESSAGE value="Crescimento e &quot;Melhoras Visuais&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Crescimento e &quot;Melhoras Visuais&quot;" />
+  </component>
+</project>
