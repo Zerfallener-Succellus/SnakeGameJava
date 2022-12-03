@@ -8,7 +8,7 @@ public class Snake {
     public int size;
     public int tail = 0;
     public int head = 0;
-    public double speedOfCobra = 0.1;
+    public double speedOfCobra = 0.01;
 
     public Direction direction = Direction.RIGHT;
     public Direction lastDirection;

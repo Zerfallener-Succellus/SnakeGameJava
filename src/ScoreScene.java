@@ -94,10 +94,10 @@ public BufferedImage playCurrentImage, exitCurrentImage;
         g.drawImage(exitCurrentImage,  (int)exitRect.x,(int)exitRect.y,(int)exitRect.width,(int)exitRect.height,null);
 
 
-        Font myFont = new Font("Monospaced",Font.CENTER_BASELINE,20);
+        Font myFont = new Font("Monospaced",Font.CENTER_BASELINE,60);
 		g.setFont(myFont);
         g.setColor(Color.BLACK);
-        g.drawString("POINTS:"+String.valueOf(Food.getInstance().getPoints()), 640, 596);
+        g.drawString("YOUR SCORE:"+String.valueOf(Food.getInstance().getPoints()), 160, 296);
 
     }
 }
