@@ -15,7 +15,7 @@ public class ScoreScene extends Scene {
     public ML mouseListener;
     public BufferedImage play, playPressed, exit, exitPressed;
 
-     public int pontos; 
+     
     
 
 public Rect playRect,exitRect;
@@ -52,6 +52,7 @@ public BufferedImage playCurrentImage, exitCurrentImage;
 
         if(keyListener.isKeyPressed(KeyEvent.VK_ENTER)){
             Window.getWindow().changeState( 1);
+            Food.getInstance().setPoints(0);
         }else if(keyListener.isKeyPressed(KeyEvent.VK_ESCAPE)){
             Window.getWindow().close();
         }
@@ -96,7 +97,7 @@ public BufferedImage playCurrentImage, exitCurrentImage;
         Font myFont = new Font("Monospaced",Font.CENTER_BASELINE,20);
 		g.setFont(myFont);
         g.setColor(Color.BLACK);
-        g.drawString("POINTS:"+ pontos, 640, 596);
+        g.drawString("POINTS:"+String.valueOf(Food.getInstance().getPoints()), 640, 596);
 
     }
 }

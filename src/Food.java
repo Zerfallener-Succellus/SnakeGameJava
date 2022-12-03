@@ -8,7 +8,13 @@ public class Food {
     public int width, height;
     public Color color;
     public Rect rect;
-    public int points;
+    
+    
+    private int points;
+private static Food instancia;
+    
+
+
 
     public int xPadding;
 
@@ -43,20 +49,36 @@ public class Food {
             this.rect.x = -100;
             this.rect.y = -100;
             isSpawned = false;
-            points = points + 10;
+            Food.getInstance().setPoints(points = points + 10);
             
             
             
         }
     }
 
-    public Food (int points){
-        this.points = points;
+    
+
+    
+    private Food(){
+
+    }
+    
+    public static synchronized Food getInstance(){
+    if(instancia == null){
+        instancia = new Food();
+    }
+    return instancia;
+    }
+    
+    
+    public int getPoints() {
+        return points;
     }
 
     
-
-    
+    public void setPoints(int points) {
+        this.points = points;
+    }
 
     
 
@@ -66,4 +88,8 @@ public class Food {
         g2.setColor(color);
         g2.fillRect((int)this.rect.x + xPadding, (int)this.rect.y + xPadding, width, height);
     }
+
+    
+    
+
 }

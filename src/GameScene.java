@@ -111,7 +111,7 @@ public void setPointsfinal(int pointsfinal) {
         Font myFont = new Font("Monospaced",Font.CENTER_BASELINE,20);
 		g2.setFont(myFont);
         g2.setColor(Color.BLACK);
-        g2.drawString("POINTS:"+String.valueOf(food.points), 640, 596);
+        g2.drawString("POINTS:"+String.valueOf(Food.getInstance().getPoints()), 640, 596);
         
         
         
