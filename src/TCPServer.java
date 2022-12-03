@@ -5,7 +5,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 		public class TCPServer extends GameScene{
-
+			public static KL keyListener = new KL();
 			public TCPServer(KL keyListener) {
 				super(keyListener);
 				// TODO Auto-generated constructor stub
@@ -15,7 +15,7 @@ import java.net.Socket;
 			public static void main(String argv[]) throws Exception {
 				
 				//Cria um objeto GameScene
-				GameScene auxiliar = new GameScene();
+				GameScene auxiliar = new GameScene(keyListener);
 				int serverPontuacao = auxiliar.getPointsfinal();
 				
 				int clientPontuacao;
