@@ -93,11 +93,14 @@ public BufferedImage playCurrentImage, exitCurrentImage;
         g.drawImage(playCurrentImage, (int)playRect.x, (int)playRect.y, (int)playRect.width, (int)playRect.height,null);
         g.drawImage(exitCurrentImage,  (int)exitRect.x,(int)exitRect.y,(int)exitRect.width,(int)exitRect.height,null);
 
-
+        FontManager fontManager = new FontManager();
+        Font laFonte = fontManager.carregarFonte("assets/fontegame.ttf", Font.CENTER_BASELINE, 13);
         Font myFont = new Font("Monospaced",Font.CENTER_BASELINE,60);
-		g.setFont(myFont);
+		g.setFont(laFonte);
         g.setColor(Color.BLACK);
         g.drawString("YOUR SCORE:"+String.valueOf(Food.getInstance().getPoints()), 160, 296);
+
+        
 
     }
 }
