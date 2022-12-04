@@ -22,16 +22,6 @@ public class GameScene extends Scene{
 
 
 
-
-
-
-
-
-
-
-
-
-
 public void setPointsfinal(int pointsfinal) {
 	this.pointsfinal = pointsfinal;
 }
@@ -62,15 +52,6 @@ public void setPointsfinal(int pointsfinal) {
     }
 
    
-   
-
-
-
-
-
-
-
-    
 
 
 @Override
@@ -85,7 +66,10 @@ public void setPointsfinal(int pointsfinal) {
             snake.changeDirecton(Direction.LEFT,Direction.LAST);
         }
 
-      if (!food.isSpawned) food.spawn();
+      if (!food.isSpawned){
+        food.spawn();
+        
+    }
 
       food.update(dt);
         snake.update(dt);
@@ -111,12 +95,12 @@ public void setPointsfinal(int pointsfinal) {
         Font myFont = new Font("Monospaced",Font.CENTER_BASELINE,20);
 		g2.setFont(myFont);
         g2.setColor(Color.BLACK);
-        g2.drawString("POINTS:"+String.valueOf(UDPclient.getInstance().getPontosCliCli()), 640, 596);
+        g2.drawString("POINTS CLIENTE:"+String.valueOf(UDPclient.getInstanceCliente().getPontosCliCli()), 640, 596);
 
         
 		g2.setFont(myFont);
         g2.setColor(Color.BLACK);
-        g2.drawString("POINTS:"+String.valueOf(UDPserver.getInstance().getPontosSerSer()), 240, 596);
+        g2.drawString("POINTS SERVER:"+String.valueOf(UDPserver.getInstanceServer().getPontosSerSer()), 240, 596);
         
         
         
@@ -132,4 +116,19 @@ public void setPointsfinal(int pointsfinal) {
         snake.draw(g2);
         food.draw(g2);
     }
+    
+    
+    private static GameScene instancia;
+    private GameScene(){
+
+    }
+    
+    public static synchronized GameScene getInstance(){
+    if(instancia == null){
+        instancia = new GameScene();
+    }
+    return instancia;
+    }
+    
+
 }

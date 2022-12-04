@@ -96,7 +96,7 @@ public BufferedImage playCurrentImage, exitCurrentImage;
         FontManager fontManager = new FontManager();
         Font laFonte = fontManager.carregarFonte("assets/fontegame.ttf", Font.CENTER_BASELINE, 13);
         Font myFont = new Font("Monospaced",Font.CENTER_BASELINE,60);
-		g.setFont(laFonte);
+		g.setFont(myFont);
         g.setColor(Color.BLACK);
         g.drawString("YOUR SCORE:"+String.valueOf(Food.getInstance().getPoints()), 160, 296);
 

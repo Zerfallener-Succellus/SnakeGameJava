@@ -3,6 +3,11 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 
 public class UDPserver {
+
+	public UDPserver(boolean isRunning){
+		isRunning = true;
+	}
+
 	int pontosCliCli;
 	public int getPontosCliCli() {
 		return pontosCliCli;
@@ -22,6 +27,14 @@ public class UDPserver {
 	}
 
 	public static void main(String args[]) throws Exception { 
+
+		Window window = Window.getWindow();
+Thread thread = new Thread(window);
+
+
+
+
+thread.start();
 
 		DatagramSocket serverSocket = new DatagramSocket(9876); 
 
@@ -54,8 +67,8 @@ public class UDPserver {
 
 			serverSocket.send(sendPacket); 
 			
-			UDPclient.getInstance().setPontosCliCli(pontosCliente); 
-	        UDPclient.getInstance().setPontosSerSer(pontosServidor);
+			UDPclient.getInstanceCliente().setPontosCliCli(pontosCliente); 
+	        UDPclient.getInstanceCliente().setPontosSerSer(pontosServidor);
 
 		}
 	}
@@ -64,7 +77,7 @@ public class UDPserver {
 
 private UDPserver(){}
 
-public static synchronized UDPserver getInstance(){
+public static synchronized UDPserver getInstanceServer(){
 if(instancia == null){
 	instancia = new UDPserver();
 }

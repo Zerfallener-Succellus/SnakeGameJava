@@ -29,7 +29,13 @@ public class UDPclient{
 
 	public static void main(String args[]) throws Exception { 
 
-		
+		Window window = Window.getWindow();
+Thread thread = new Thread(window);
+
+
+
+
+thread.start();
 
 	BufferedReader inFromUser = 
 			new BufferedReader(new InputStreamReader(System.in)); 
@@ -44,7 +50,19 @@ public class UDPclient{
 	byte[] sendData = new byte[1024]; 
 	byte[] receiveData = new byte[1024]; 	
 	
-	String stringCliente = String.valueOf(Food.getInstance().getPoints()); 
+	
+
+	
+	
+	
+
+	
+
+	
+		
+		String stringCliente = String.valueOf(Food.getInstance().getPoints()); 
+	
+	
 	
 	sendData = stringCliente.getBytes();   
 
@@ -76,10 +94,10 @@ public class UDPclient{
 		System.out.println("Jogador2 Ganhou");
 	}
 
-	UDPclient.getInstance().setPontosCliCli(pontosCliente); 
-	UDPclient.getInstance().setPontosSerSer(pontosServidor);
+	UDPclient.getInstanceCliente().setPontosCliCli(pontosCliente); 
+	UDPclient.getInstanceCliente().setPontosSerSer(pontosServidor);
     
-    
+
    
 } 
 
@@ -88,9 +106,16 @@ private static UDPclient instancia;
 
 private UDPclient(){}
 
-public static synchronized UDPclient getInstance(){
+public static synchronized UDPclient getInstanceCliente(){
 if(instancia == null){
 	instancia = new UDPclient();
 }
 return instancia;
-}}
+}
+
+
+
+
+
+
+}
