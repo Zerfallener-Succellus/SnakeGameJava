@@ -16,6 +16,20 @@ public class GameScene extends Scene{
     
    public int pointsfinal;
 
+   public String pontosfinais;
+
+    public String getPontosfinais() {
+    return pontosfinais;
+}
+
+
+
+public void setPontosfinais(String pontosfinais) {
+    this.pontosfinais = pontosfinais;
+}
+
+
+
     public int getPointsfinal() {
 	return pointsfinal;
 }
@@ -94,15 +108,14 @@ public void setPointsfinal(int pointsfinal) {
         
         Font myFont = new Font("Monospaced",Font.CENTER_BASELINE,20);
 		g2.setFont(myFont);
-        g2.setColor(Color.BLACK);
-        g2.drawString("POINTS CLIENTE:"+String.valueOf(UDPclient.getInstanceCliente().getPontosCliCli()), 640, 596);
+        
 
         
 		g2.setFont(myFont);
         g2.setColor(Color.BLACK);
-        g2.drawString("POINTS SERVER:"+String.valueOf(UDPserver.getInstanceServer().getPontosSerSer()), 240, 596);
+        g2.drawString("POINTS CLI:"+Food.getInstance().getServerpoints(), 240, 596);
         
-        
+
         
         
         
@@ -115,7 +128,8 @@ public void setPointsfinal(int pointsfinal) {
         
         snake.draw(g2);
         food.draw(g2);
-    }
+}
+    
     
     
     private static GameScene instancia;

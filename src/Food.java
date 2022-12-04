@@ -11,6 +11,19 @@ public class Food {
     
     
     private int points;
+    private String serverpoints;
+
+    public String getServerpoints() {
+        return serverpoints;
+    }
+
+    public void setServerpoints(String serverpoints) {
+        this.serverpoints = serverpoints;
+    }
+
+
+
+
 private static Food instancia;
     
 
