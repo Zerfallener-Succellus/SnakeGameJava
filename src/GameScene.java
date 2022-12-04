@@ -111,7 +111,12 @@ public void setPointsfinal(int pointsfinal) {
         Font myFont = new Font("Monospaced",Font.CENTER_BASELINE,20);
 		g2.setFont(myFont);
         g2.setColor(Color.BLACK);
-        g2.drawString("POINTS:"+String.valueOf(Food.getInstance().getPoints()), 640, 596);
+        g2.drawString("POINTS:"+String.valueOf(UDPclient.getInstance().getPontosCliCli()), 640, 596);
+
+        
+		g2.setFont(myFont);
+        g2.setColor(Color.BLACK);
+        g2.drawString("POINTS:"+String.valueOf(UDPclient.getInstance().getPontosSerSer()), 240, 596);
         
         
         
@@ -128,5 +133,3 @@ public void setPointsfinal(int pointsfinal) {
         food.draw(g2);
     }
 }
-
-

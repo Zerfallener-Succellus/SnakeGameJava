@@ -8,7 +8,28 @@
 	
 	
 public class UDPclient{
+	
+	int pontosCliCli;
+	int pontosSerSer;
+	public int getPontosSerSer() {
+		return pontosSerSer;
+	}
+
+	public void setPontosSerSer(int pontosSerSer) {
+		this.pontosSerSer = pontosSerSer;
+	}
+
+	public int getPontosCliCli() {
+		return pontosCliCli;
+	}
+
+	public void setPontosCliCli(int pontosCliCli) {
+		this.pontosCliCli = pontosCliCli;
+	}
+
 	public static void main(String args[]) throws Exception { 
+
+		
 
 	BufferedReader inFromUser = 
 			new BufferedReader(new InputStreamReader(System.in)); 
@@ -52,6 +73,22 @@ public class UDPclient{
 	else {
 		System.out.println("Jogador2 Ganhou");
 	}
+
+	UDPclient.getInstance().setPontosCliCli(pontosClientes); 
+	UDPclient.getInstance().setPontosSerSer(pontosServer);
+    
+    
+   
 } 
 
+
+private static UDPclient instancia;
+
+private UDPclient(){}
+
+public static synchronized UDPclient getInstance(){
+if(instancia == null){
+	instancia = new UDPclient();
 }
+return instancia;
+}}
