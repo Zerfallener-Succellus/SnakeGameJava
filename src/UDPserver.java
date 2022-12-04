@@ -3,6 +3,23 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 
 public class UDPserver {
+	int pontosCliCli;
+	public int getPontosCliCli() {
+		return pontosCliCli;
+	}
+
+	public void setPontosCliCli(int pontosCliCli) {
+		this.pontosCliCli = pontosCliCli;
+	}
+
+	int pontosSerSer;
+	public int getPontosSerSer() {
+		return pontosSerSer;
+	}
+
+	public void setPontosSerSer(int pontosSerSer) {
+		this.pontosSerSer = pontosSerSer;
+	}
 
 	public static void main(String args[]) throws Exception { 
 
@@ -36,7 +53,21 @@ public class UDPserver {
 					new DatagramPacket(sendData, sendData.length, IPAddress, port); 
 
 			serverSocket.send(sendPacket); 
+			
+			UDPclient.getInstance().setPontosCliCli(pontosCliente); 
+	        UDPclient.getInstance().setPontosSerSer(pontosServidor);
 
 		}
 	}
+
+	private static UDPserver instancia;
+
+private UDPserver(){}
+
+public static synchronized UDPserver getInstance(){
+if(instancia == null){
+	instancia = new UDPserver();
+}
+return instancia;
+}
 }

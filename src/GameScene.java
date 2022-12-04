@@ -116,7 +116,7 @@ public void setPointsfinal(int pointsfinal) {
         
 		g2.setFont(myFont);
         g2.setColor(Color.BLACK);
-        g2.drawString("POINTS:"+String.valueOf(UDPclient.getInstance().getPontosSerSer()), 240, 596);
+        g2.drawString("POINTS:"+String.valueOf(UDPserver.getInstance().getPontosSerSer()), 240, 596);
         
         
         

@@ -76,8 +76,8 @@ public class UDPclient{
 		System.out.println("Jogador2 Ganhou");
 	}
 
-	UDPclient.getInstance().setPontosCliCli(pontosClientes); 
-	UDPclient.getInstance().setPontosSerSer(pontosServer);
+	UDPclient.getInstance().setPontosCliCli(pontosCliente); 
+	UDPclient.getInstance().setPontosSerSer(pontosServidor);
     
     
    
