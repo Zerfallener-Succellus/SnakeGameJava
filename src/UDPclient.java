@@ -14,16 +14,17 @@ public class UDPclient{
 			new BufferedReader(new InputStreamReader(System.in)); 
 
 	DatagramSocket clientSocket = new DatagramSocket();
-
-	InetAddress IPAddress = InetAddress.getByName("localhost"); 
+	
+	InetAddress IPAddress = InetAddress.getByName("143.202.127.69"); 
 	
 	
 	
 
 	byte[] sendData = new byte[1024]; 
-	byte[] receiveData = new byte[1024]; 
+	byte[] receiveData = new byte[1024]; 	
 	
 	String stringCliente = String.valueOf(Food.getInstance().getPoints()); 
+	
 	sendData = stringCliente.getBytes();   
 
 	DatagramPacket sendPacket = 
@@ -39,13 +40,14 @@ public class UDPclient{
 	String stringServidor = 
 			new String(receivePacket.getData()); 
 	
-	int pontosServer = Integer.valueOf(stringServidor);
-	int pontosClientes= Integer.valueOf(stringCliente);
+	int pontosServidor = Integer.valueOf(stringServidor);
+	int pontosCliente= Integer.valueOf(stringCliente);
 	
-	if(pontosServer>pontosClientes) {
+	
+	if(pontosServidor>pontosCliente) {
 		System.out.println("Jogador 1 ganhou!");
 	}
-	else if(pontosServer==pontosClientes) {
+	else if(pontosServidor==pontosCliente) {
 		System.out.println("Jogadores empataram");
 	}
 	
