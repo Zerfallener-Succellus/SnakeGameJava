@@ -11,14 +11,23 @@ public class Food {
     
     
     private int points;
-    private String serverpoints;
+    private String clientpoints;
+    private String clientpointsdois;
 
-    public String getServerpoints() {
-        return serverpoints;
+    public String getClientpointsdois() {
+        return clientpointsdois;
     }
 
-    public void setServerpoints(String serverpoints) {
-        this.serverpoints = serverpoints;
+    public void setClientpointsdois(String clientpointsdois) {
+        this.clientpointsdois = clientpointsdois;
+    }
+
+    public String getClientpoints() {
+        return clientpoints;
+    }
+
+    public void setClientpoints(String clientpoints) {
+        this.clientpoints = clientpoints;
     }
 
 

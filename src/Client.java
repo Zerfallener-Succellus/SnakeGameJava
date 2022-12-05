@@ -23,11 +23,12 @@ public class Client extends Scene {
             try{
                 String messageToSend = String.valueOf(Food.getInstance().getPoints());
                 buffer = messageToSend.getBytes();
-                DatagramPacket datagramPacket = new DatagramPacket(buffer, buffer.length, inetAddress, 1234);
+                DatagramPacket datagramPacket = new DatagramPacket(buffer, buffer.length, inetAddress, 1239);
                 datagramSocket.send(datagramPacket);
                 datagramSocket.receive(datagramPacket);
                 String messageFromServer = new String(datagramPacket.getData(), 0, datagramPacket.getLength());
                 System.out.println("PONTOS CLIENTE 1: " +messageFromServer);
+                Food.getInstance().setClientpoints(messageFromServer);
                 
             } catch(IOException e){
                 e.printStackTrace();

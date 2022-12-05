@@ -35,10 +35,10 @@ public class Server extends Scene {
                 int port = datagramPacket.getPort();
                 String messageFromClient = new String(datagramPacket.getData(), 0, datagramPacket.getLength());
                 System.out.println("PONTOS DO CLIENTE 1: "+messageFromClient);
-                String olhaosponto = messageFromClient;
-                Food.getInstance().setServerpoints(olhaosponto);
                 datagramPacket = new DatagramPacket(buffer, buffer.length, inetAddress, port);
                 datagramSocket.send(datagramPacket);
+                Food.getInstance().setClientpoints(messageFromClient);
+                
                 
             } catch(IOException e) {
                 e.printStackTrace();
@@ -54,10 +54,10 @@ public class Server extends Scene {
        
         Window window = Window.getWindow();
         Thread thread = new Thread(window);
-        thread.start();
+       thread.start();
 
         
-        DatagramSocket datagramSocket = new DatagramSocket(1234);
+        DatagramSocket datagramSocket = new DatagramSocket(1239);
         Server server = new Server(datagramSocket);
         server.receiveThenSend();
     }

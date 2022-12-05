@@ -106,14 +106,18 @@ public void setPointsfinal(int pointsfinal) {
         g2.fill(new Rectangle2D.Double(background.x,background.y,background.width,background.height));
 
         
-        Font myFont = new Font("Monospaced",Font.CENTER_BASELINE,20);
+        Font myFont = new Font("Monospaced",Font.CENTER_BASELINE,15);
 		g2.setFont(myFont);
         
 
         
 		g2.setFont(myFont);
         g2.setColor(Color.BLACK);
-        g2.drawString("POINTS CLI:"+Food.getInstance().getServerpoints(), 240, 596);
+        g2.drawString("POINTS CLIENTE: "+Food.getInstance().getClientpoints(), 40, 590);
+
+        g2.setFont(myFont);
+        g2.setColor(Color.BLACK);
+        g2.drawString("POINTS CLIENTE 2: "+Food.getInstance().getClientpointsdois(), 560, 590);
         
 
         
