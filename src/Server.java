@@ -26,18 +26,25 @@ public class Server extends Scene {
         while (true){
             try{
 
-                
-
+               
                 
                 DatagramPacket datagramPacket = new DatagramPacket(buffer, buffer.length);
                 datagramSocket.receive(datagramPacket);
                 InetAddress inetAddress = datagramPacket.getAddress();
                 int port = datagramPacket.getPort();
                 String messageFromClient = new String(datagramPacket.getData(), 0, datagramPacket.getLength());
+                
                 System.out.println("PONTOS DO CLIENTE 1: "+messageFromClient);
+
+                
+                String messageToSend = String.valueOf(Food.getInstance().getPoints());
+                buffer = messageToSend.getBytes();
                 datagramPacket = new DatagramPacket(buffer, buffer.length, inetAddress, port);
                 datagramSocket.send(datagramPacket);
+                String messageFromServer = new String(datagramPacket.getData(), 0, datagramPacket.getLength());
                 Food.getInstance().setClientpoints(messageFromClient);
+                Food.getInstance().setClientpointsdois(messageFromServer);
+                
                 
                 
             } catch(IOException e) {
