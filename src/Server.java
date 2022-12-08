@@ -29,8 +29,8 @@ public class Server {
                 datagramPacket = new DatagramPacket(buffer, buffer.length, inetAddress, port);
                 datagramSocket.send(datagramPacket);
                 String messageFromServer = new String(datagramPacket.getData(), 0, datagramPacket.getLength());
-                Food.getInstance().setClientpoints(messageFromClient);
-                Food.getInstance().setClientpointsdois(messageFromServer);
+                Food.getInstance().setClientpoints(messageFromServer); // servidor
+                Food.getInstance().setClientpointsdois(messageFromClient); // cliente
 
             } catch (IOException e) {
                 e.printStackTrace();

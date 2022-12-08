@@ -30,8 +30,8 @@ public class Client {
                 datagramSocket.receive(datagramPacket);
 
                 String messageFromServer = new String(datagramPacket.getData(), 0, datagramPacket.getLength());
-                Food.getInstance().setClientpoints(messageFromServer);
-                Food.getInstance().setClientpointsdois(messageFromClient);
+                Food.getInstance().setClientpoints(messageFromServer); // Servidor
+                Food.getInstance().setClientpointsdois(messageFromClient); // Cliente
 
             } catch (IOException e) {
                 e.printStackTrace();

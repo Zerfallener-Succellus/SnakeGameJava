@@ -104,8 +104,8 @@ public class ScoreScene extends Scene {
             Font myFont = new Font("Monospaced", Font.CENTER_BASELINE, 60);
             g.setFont(myFont);
             g.setColor(Color.BLACK);
-            g.drawString("SERVIDOR VENCEU:" + String.valueOf(Food.getInstance().getPoints()), 60, 296);
-            g.drawString("YOUR SCORE:" + String.valueOf(Food.getInstance().getPoints()), 160, 296);
+            g.drawString("SERVIDOR VENCEU", 60, 296);
+            g.drawString("YOUR SCORE:" + String.valueOf(Food.getInstance().getPoints()), 60, 150);
         } else if (pontosServer < pontosCliente) {
             g.setColor(new Color(178, 189, 8, 255));
             g.fillRect(0, 0, Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT);
@@ -121,8 +121,8 @@ public class ScoreScene extends Scene {
             Font myFont = new Font("Monospaced", Font.CENTER_BASELINE, 60);
             g.setFont(myFont);
             g.setColor(Color.BLACK);
-            g.drawString("CLIENTE VENCEU:" + String.valueOf(Food.getInstance().getPoints()), 60, 296);
-            g.drawString("YOUR SCORE:" + String.valueOf(Food.getInstance().getPoints()), 160, 296);
+            g.drawString("CLIENTE VENCEU", 60, 296);
+            g.drawString("YOUR SCORE:" + String.valueOf(Food.getInstance().getPoints()), 160, 150);
         } else if (pontosCliente == pontosServer) {
             g.setColor(new Color(178, 189, 8, 255));
             g.fillRect(0, 0, Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT);
@@ -138,26 +138,9 @@ public class ScoreScene extends Scene {
             Font myFont = new Font("Monospaced", Font.CENTER_BASELINE, 60);
             g.setFont(myFont);
             g.setColor(Color.BLACK);
-            g.drawString("HOUVE UM EMPATE:" + String.valueOf(Food.getInstance().getPoints()), 60, 296);
-            g.drawString("YOUR SCORE:" + String.valueOf(Food.getInstance().getPoints()), 160, 296);
+            g.drawString("HOUVE UM EMPATE", 60, 296);
+            g.drawString("YOUR SCORE:" + String.valueOf(Food.getInstance().getPoints()), 160, 150);
 
-        }else{
-            g.setColor(new Color(178, 189, 8, 255));
-            g.fillRect(0, 0, Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT);
-            g.drawImage(playCurrentImage, (int) playRect.x, (int) playRect.y, (int) playRect.width,
-                    (int) playRect.height,
-                    null);
-            g.drawImage(exitCurrentImage, (int) exitRect.x, (int) exitRect.y, (int) exitRect.width,
-                    (int) exitRect.height,
-                    null);
-
-            FontManager fontManager = new FontManager();
-            Font laFonte = fontManager.carregarFonte("assets/fontegame.ttf", Font.CENTER_BASELINE, 13);
-            Font myFont = new Font("Monospaced", Font.CENTER_BASELINE, 60);
-            g.setFont(myFont);
-            g.setColor(Color.BLACK);
-            g.drawString("VOCE ESTÁ OFLINE:" + String.valueOf(Food.getInstance().getPoints()), 60, 296);
-            g.drawString("YOUR SCORE:" + String.valueOf(Food.getInstance().getPoints()), 160, 296);
         }
     }
 }
