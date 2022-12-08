@@ -30,7 +30,6 @@ public class Client {
                 datagramSocket.receive(datagramPacket);
 
                 String messageFromServer = new String(datagramPacket.getData(), 0, datagramPacket.getLength());
-                System.out.println("PONTOS CLIENTE 1: " + messageFromServer);
                 Food.getInstance().setClientpoints(messageFromServer);
                 Food.getInstance().setClientpointsdois(messageFromClient);
 
@@ -52,7 +51,6 @@ public class Client {
         DatagramSocket datagramSocket = new DatagramSocket();
         InetAddress inetAddress = InetAddress.getByName("localhost");
         Client client = new Client(datagramSocket, inetAddress);
-        System.out.println("Mandando os pacotes do datagrama para o Server.");
         client.sendThenReceive();
     }
 

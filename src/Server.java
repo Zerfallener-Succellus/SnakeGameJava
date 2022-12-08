@@ -24,8 +24,6 @@ public class Server {
                 int port = datagramPacket.getPort();
                 String messageFromClient = new String(datagramPacket.getData(), 0, datagramPacket.getLength());
 
-                System.out.println("PONTOS DO CLIENTE 1: " + messageFromClient);
-
                 String messageToSend = String.valueOf(Food.getInstance().getPoints());
                 buffer = messageToSend.getBytes();
                 datagramPacket = new DatagramPacket(buffer, buffer.length, inetAddress, port);
