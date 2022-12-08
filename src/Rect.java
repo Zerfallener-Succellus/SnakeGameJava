@@ -13,8 +13,4 @@ public class Rect {
         this.lastDirection = lastDirection;
     }
 
-   
-
-
 }
-

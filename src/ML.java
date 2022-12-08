@@ -7,23 +7,30 @@ public class ML extends MouseAdapter implements MouseMotionListener {
     public double x = 0.0, y = 0.0;
 
     @Override
-    public void mousePressed(MouseEvent e){
+    public void mousePressed(MouseEvent e) {
         isPressed = true;
     }
 
     @Override
-    public void mouseReleased(MouseEvent e){
+    public void mouseReleased(MouseEvent e) {
         isPressed = false;
     }
 
     @Override
-    public void mouseMoved(MouseEvent e){
+    public void mouseMoved(MouseEvent e) {
         this.x = e.getX();
         this.y = e.getY();
     }
 
-    public double getX(){ return this.x;}
-    public double getY(){ return this.y;}
+    public double getX() {
+        return this.x;
+    }
 
-    public boolean isPressed(){return this.isPressed;}
+    public double getY() {
+        return this.y;
+    }
+
+    public boolean isPressed() {
+        return this.isPressed;
+    }
 }

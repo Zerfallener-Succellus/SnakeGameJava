@@ -8,8 +8,7 @@ public class Food {
     public int width, height;
     public Color color;
     public Rect rect;
-    
-    
+
     private int points;
     private String clientpoints;
     private String clientpointsdois;
@@ -30,19 +29,11 @@ public class Food {
         this.clientpoints = clientpoints;
     }
 
-
-
-
-private static Food instancia;
-    
-
-
+    private static Food instancia;
 
     public int xPadding;
 
     public boolean isSpawned = false;
-
-    
 
     public Food(Rect background, Snake snake, int width, int height, Color color) {
         this.background = background;
@@ -50,18 +41,20 @@ private static Food instancia;
         this.width = width;
         this.height = height;
         this.color = color;
-        this.rect = new Rect(0, 0, width, height,Direction.NONE,Direction.LAST);
+        this.rect = new Rect(0, 0, width, height, Direction.NONE, Direction.LAST);
 
-        xPadding = (int)((Constants.TILE_WIDTH - this.width) / 2.0);
+        xPadding = (int) ((Constants.TILE_WIDTH - this.width) / 2.0);
     }
 
     public void spawn() {
         do {
-            double randX = (int)(Math.random() * (int)(background.width / Constants.TILE_WIDTH)) * Constants.TILE_WIDTH + background.x;
-            double randY = (int)(Math.random() * (int)(background.height / Constants.TILE_WIDTH)) * Constants.TILE_WIDTH + background.y;
+            double randX = (int) (Math.random() * (int) (background.width / Constants.TILE_WIDTH))
+                    * Constants.TILE_WIDTH + background.x;
+            double randY = (int) (Math.random() * (int) (background.height / Constants.TILE_WIDTH))
+                    * Constants.TILE_WIDTH + background.y;
             this.rect.x = randX;
             this.rect.y = randY;
-        } while(snake.intersectingWithRect(this.rect));
+        } while (snake.intersectingWithRect(this.rect));
         this.isSpawned = true;
     }
 
@@ -72,46 +65,33 @@ private static Food instancia;
             this.rect.y = -100;
             isSpawned = false;
             Food.getInstance().setPoints(points = points + 10);
-            
-            
-            
+
         }
     }
 
-    
-
-    
-    private Food(){
+    private Food() {
 
     }
-    
-    public static synchronized Food getInstance(){
-    if(instancia == null){
-        instancia = new Food();
+
+    public static synchronized Food getInstance() {
+        if (instancia == null) {
+            instancia = new Food();
+        }
+        return instancia;
     }
-    return instancia;
-    }
-    
-    
+
     public int getPoints() {
         return points;
     }
 
-    
     public void setPoints(int points) {
         this.points = points;
     }
 
-    
-
-
     public void draw(Graphics2D g2) {
-        
-        g2.setColor(color);
-        g2.fillRect((int)this.rect.x + xPadding, (int)this.rect.y + xPadding, width, height);
-    }
 
-    
-    
+        g2.setColor(color);
+        g2.fillRect((int) this.rect.x + xPadding, (int) this.rect.y + xPadding, width, height);
+    }
 
 }
