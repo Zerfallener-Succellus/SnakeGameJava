@@ -47,6 +47,7 @@ public class ScoreScene extends Scene {
         if (keyListener.isKeyPressed(KeyEvent.VK_ENTER)) {
             Window.getWindow().changeState(1);
             Food.getInstance().setPoints(0);
+            Snake.getInstance().setLost("no");
         } else if (keyListener.isKeyPressed(KeyEvent.VK_ESCAPE)) {
             Window.getWindow().close();
         }
@@ -60,6 +61,9 @@ public class ScoreScene extends Scene {
             playCurrentImage = playPressed;
             if (mouseListener.isPressed()) {
                 Window.getWindow().changeState(1);
+                
+            Food.getInstance().setPoints(0);
+            Snake.getInstance().setLost("no");
             }
         } else {
             playCurrentImage = play;
@@ -100,7 +104,7 @@ public class ScoreScene extends Scene {
                     null);
 
             FontManager fontManager = new FontManager();
-            Font laFonte = fontManager.carregarFonte("assets/fontegame.ttf", Font.CENTER_BASELINE, 13);
+           
             Font myFont = new Font("Monospaced", Font.CENTER_BASELINE, 60);
             g.setFont(myFont);
             g.setColor(Color.BLACK);
@@ -117,7 +121,7 @@ public class ScoreScene extends Scene {
                     null);
 
             FontManager fontManager = new FontManager();
-            Font laFonte = fontManager.carregarFonte("assets/fontegame.ttf", Font.CENTER_BASELINE, 13);
+           
             Font myFont = new Font("Monospaced", Font.CENTER_BASELINE, 60);
             g.setFont(myFont);
             g.setColor(Color.BLACK);
@@ -134,7 +138,7 @@ public class ScoreScene extends Scene {
                     null);
 
             FontManager fontManager = new FontManager();
-            Font laFonte = fontManager.carregarFonte("assets/fontegame.ttf", Font.CENTER_BASELINE, 13);
+           
             Font myFont = new Font("Monospaced", Font.CENTER_BASELINE, 60);
             g.setFont(myFont);
             g.setColor(Color.BLACK);

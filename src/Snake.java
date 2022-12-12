@@ -4,7 +4,8 @@ import java.awt.geom.Rectangle2D;
 public class Snake {
     public Rect[] body = new Rect[130];
     public double bodyWidth, bodyHeight;
-
+    private String lost = "n";
+    private String enemyLost = "n";
     public int size;
     public int tail = 0;
     public int head = 0;
@@ -73,7 +74,14 @@ public class Snake {
 
         if (intersectingWithSelf()) {
             Window.getWindow().changeState(2);
+            Snake.getInstance().setLost("y");
         }
+
+        if (enemyLost == "y"){
+            Window.getWindow().changeState(2);
+            Snake.getInstance().setLost("y");
+        }
+
         if (waitTimeLeft > 0) {
             waitTimeLeft -= dt;
             ogWaitBetweenUpdates = speedOfCobra;
@@ -190,5 +198,34 @@ public class Snake {
             g2.fill(new Rectangle2D.Double(pieceee.x + 2.0, pieceee.y + 2.0, subWidthee, subHeightee));
 
         }
+    }
+
+    public String getEnemyLost() {
+        return enemyLost;
+    }
+
+    public void setEnemyLost(String enemyLost) {
+        this.enemyLost = enemyLost;
+    }
+
+    public String getLost() {
+        return lost;
+    }
+
+    public void setLost(String lost) {
+        this.lost = lost;
+    }
+
+    private static Snake instancia;
+
+    private Snake() {
+
+    }
+
+    public static synchronized Snake getInstance() {
+        if (instancia == null) {
+            instancia = new Snake();
+        }
+        return instancia;
     }
 }

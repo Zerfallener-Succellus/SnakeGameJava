@@ -62,11 +62,11 @@ public class GameScene extends Scene {
 
         g2.setFont(myFont);
         g2.setColor(Color.BLACK);
-        g2.drawString("POINTS CLIENTE: " + Food.getInstance().getClientpoints(), 40, 650);
+        g2.drawString("YOUR POINTS: " + Food.getInstance().getClientpoints(), 40, 650);
 
         g2.setFont(myFont);
         g2.setColor(Color.BLACK);
-        g2.drawString("POINTS SERVER: " + Food.getInstance().getClientpointsdois(), 670, 650);
+        g2.drawString("ENEMY POINTS: " + Food.getInstance().getClientpointsdois(), 670, 650);
 
         g2.setStroke(stroke);
         g2.setColor(Color.BLACK);
