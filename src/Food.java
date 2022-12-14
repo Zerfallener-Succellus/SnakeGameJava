@@ -1,5 +1,9 @@
 import java.awt.*;
+import java.io.File;
 
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.JLabel;
 
 public class Food {
@@ -65,6 +69,18 @@ public class Food {
             this.rect.y = -100;
             isSpawned = false;
             Food.getInstance().setPoints(points = points + 10);
+
+            try {
+               
+                AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("assets\\eat.wav").getAbsoluteFile());
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInputStream);
+                clip.start();
+                
+            } catch (Exception ex) {
+                System.out.println("Erro ao executar SOM!");
+                ex.printStackTrace();
+            }
 
         }
     }

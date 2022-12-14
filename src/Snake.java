@@ -1,5 +1,10 @@
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
+import java.io.File;
+
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 
 public class Snake {
     public Rect[] body = new Rect[130];
@@ -75,6 +80,17 @@ public class Snake {
         if (intersectingWithSelf()) {
             Window.getWindow().changeState(2);
             Snake.getInstance().setLost("y");
+            try {
+               
+                AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("assets\\lostsound.wav").getAbsoluteFile());
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInputStream);
+                clip.start();
+                
+            } catch (Exception ex) {
+                System.out.println("Erro ao executar SOM!");
+                ex.printStackTrace();
+            }
         }
 
         if (enemyLost == "y"){
