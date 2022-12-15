@@ -37,8 +37,8 @@ public class ScoreScene extends Scene {
         playCurrentImage = play;
         exitCurrentImage = exit;
 
-        playRect = new Rect(40, 515, 92, 88, Direction.RIGHT, Direction.LAST);
-        exitRect = new Rect(660, 515, 92, 88, Direction.RIGHT, Direction.LAST);
+        playRect = new Rect(140, 580, 122, 117, Direction.RIGHT, Direction.LAST);
+        exitRect = new Rect(640, 580, 122, 117, Direction.RIGHT, Direction.LAST);
     }
 
     @Override
@@ -61,9 +61,9 @@ public class ScoreScene extends Scene {
             playCurrentImage = playPressed;
             if (mouseListener.isPressed()) {
                 Window.getWindow().changeState(1);
-                
-            Food.getInstance().setPoints(0);
-            Snake.getInstance().setLost("no");
+
+                Food.getInstance().setPoints(0);
+                Snake.getInstance().setLost("no");
             }
         } else {
             playCurrentImage = play;
@@ -91,6 +91,7 @@ public class ScoreScene extends Scene {
     public void draw(Graphics g) {
 
         int pontosServer = Integer.valueOf(Food.getInstance().getClientpoints());
+
         int pontosCliente = Integer.valueOf(Food.getInstance().getClientpointsdois());
 
         if (pontosServer > pontosCliente) {
@@ -103,13 +104,11 @@ public class ScoreScene extends Scene {
                     (int) exitRect.height,
                     null);
 
-            FontManager fontManager = new FontManager();
-           
-            Font myFont = new Font("Monospaced", Font.CENTER_BASELINE, 60);
+            Font myFont = new Font("Monospaced", Font.ROMAN_BASELINE, 60);
             g.setFont(myFont);
             g.setColor(Color.BLACK);
-            g.drawString("SERVIDOR VENCEU", 60, 296);
-            g.drawString("YOUR SCORE:" + String.valueOf(Food.getInstance().getPoints()), 60, 150);
+            g.drawString("SERVIDOR VENCEU", 130, 350);
+            g.drawString("YOUR SCORE:" + String.valueOf(Food.getInstance().getPoints()), 140, 150);
         } else if (pontosServer < pontosCliente) {
             g.setColor(new Color(178, 189, 8, 255));
             g.fillRect(0, 0, Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT);
@@ -120,13 +119,11 @@ public class ScoreScene extends Scene {
                     (int) exitRect.height,
                     null);
 
-            FontManager fontManager = new FontManager();
-           
-            Font myFont = new Font("Monospaced", Font.CENTER_BASELINE, 60);
+            Font myFont = new Font("Monospaced", Font.ROMAN_BASELINE, 60);
             g.setFont(myFont);
             g.setColor(Color.BLACK);
-            g.drawString("CLIENTE VENCEU", 60, 296);
-            g.drawString("YOUR SCORE:" + String.valueOf(Food.getInstance().getPoints()), 160, 150);
+            g.drawString("CLIENTE VENCEU", 130, 350);
+            g.drawString("YOUR SCORE:" + String.valueOf(Food.getInstance().getPoints()), 140, 150);
         } else if (pontosCliente == pontosServer) {
             g.setColor(new Color(178, 189, 8, 255));
             g.fillRect(0, 0, Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT);
@@ -137,14 +134,13 @@ public class ScoreScene extends Scene {
                     (int) exitRect.height,
                     null);
 
-            FontManager fontManager = new FontManager();
-           
-            Font myFont = new Font("Monospaced", Font.CENTER_BASELINE, 60);
+            Font myFont = new Font("Monospaced", Font.ROMAN_BASELINE, 60);
             g.setFont(myFont);
             g.setColor(Color.BLACK);
-            g.drawString("HOUVE UM EMPATE", 60, 296);
-            g.drawString("YOUR SCORE:" + String.valueOf(Food.getInstance().getPoints()), 160, 150);
+            g.drawString("HOUVE UM EMPATE", 130, 350);
+            g.drawString("YOUR SCORE:" + String.valueOf(Food.getInstance().getPoints()), 140, 150);
 
         }
+
     }
 }

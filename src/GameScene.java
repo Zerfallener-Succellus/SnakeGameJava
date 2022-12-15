@@ -60,6 +60,8 @@ public class GameScene extends Scene {
         Font myFont = new Font("Monospaced", Font.CENTER_BASELINE, 15);
         g2.setFont(myFont);
 
+        
+
         g2.setFont(myFont);
         g2.setColor(Color.BLACK);
         g2.drawString("YOUR POINTS: " + Food.getInstance().getClientpoints(), 40, 650);
