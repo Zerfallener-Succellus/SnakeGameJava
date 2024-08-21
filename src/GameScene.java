@@ -27,26 +27,33 @@ public class GameScene extends Scene {
 
     }
 
+    private long lastPressed = 0;
+
+
     @Override
     public void update(double dt) {
-        if (keyListener.isKeyPressed(KeyEvent.VK_UP)) {
+        long currentTime = System.currentTimeMillis();
+
+        if (keyListener.isKeyPressed(KeyEvent.VK_UP) && currentTime - lastPressed > 300) {
             snake.changeDirecton(Direction.UP, Direction.LAST);
-        } else if (keyListener.isKeyPressed(KeyEvent.VK_DOWN)) {
+            lastPressed = currentTime;
+        } else if (keyListener.isKeyPressed(KeyEvent.VK_DOWN) && currentTime - lastPressed > 300) {
             snake.changeDirecton(Direction.DOWN, Direction.LAST);
-        } else if (keyListener.isKeyPressed(KeyEvent.VK_RIGHT)) {
+            lastPressed = currentTime;
+        } else if (keyListener.isKeyPressed(KeyEvent.VK_RIGHT) && currentTime - lastPressed > 300) {
             snake.changeDirecton(Direction.RIGHT, Direction.LAST);
-        } else if (keyListener.isKeyPressed(KeyEvent.VK_LEFT)) {
+            lastPressed = currentTime;
+        } else if (keyListener.isKeyPressed(KeyEvent.VK_LEFT) && currentTime - lastPressed > 300) {
             snake.changeDirecton(Direction.LEFT, Direction.LAST);
+            lastPressed = currentTime;
         }
 
         if (!food.isSpawned) {
             food.spawn();
-
         }
 
         food.update(dt);
         snake.update(dt);
-
     }
 
     @Override

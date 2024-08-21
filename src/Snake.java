@@ -44,12 +44,12 @@ public class Snake {
     public void changeDirecton(Direction newDirection, Direction lastDirection) {
         if (newDirection == Direction.RIGHT && direction != Direction.LEFT) {
             direction = newDirection;
-        } else if (newDirection == Direction.LEFT && direction != Direction.RIGHT) {
+        } if (newDirection == Direction.LEFT && direction != Direction.RIGHT) {
             direction = newDirection;
-        } else if (newDirection == Direction.UP && direction != Direction.DOWN) {
+        } if (newDirection == Direction.UP && direction != Direction.DOWN) {
 
             direction = newDirection;
-        } else if (newDirection == Direction.DOWN && direction != Direction.UP) {
+        } if (newDirection == Direction.DOWN && direction != Direction.UP) {
 
             direction = newDirection;
         }
@@ -68,12 +68,7 @@ public class Snake {
 
     }
 
-    public void dontcrashplease(Direction lastDirection, Direction newDirection) {
-        if (direction == Direction.LEFT && lastDirection == Direction.UP && newDirection == Direction.DOWN) {
-            newDirection = Direction.LEFT;
 
-        }
-    }
 
     public void update(double dt) {
 
